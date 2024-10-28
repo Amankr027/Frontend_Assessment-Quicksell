@@ -4,7 +4,7 @@ import UserIcon from '../Profile';
 import MoreIcon from '../../assets/icons_FEtask/three_dot_menu.svg';
 import { getStatusIcon } from '../../help/helper';
 
-function Board({ ticket, userData, hideStatusIcon, hideProfileIcon }) {
+function Card({ ticket, userData, hideStatusIcon, hideProfileIcon }) {
   return (
     <div className='card'>
       <div className='top-container'>
@@ -30,4 +30,4 @@ function Board({ ticket, userData, hideStatusIcon, hideProfileIcon }) {
   );
 }
 
-export default Board;
+export default Card;
