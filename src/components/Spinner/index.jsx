@@ -1,7 +1,7 @@
 import React from 'react';
-import './loader.css';
+import './index.css';
 
-function Loader({ fullscreen = true }) {
+function Spinner({ fullscreen = true }) {
     return (
         <div className={`loader-container ${fullscreen ? "fullscreen" : ""}`}>
             <span className='loader'>Loading...</span>
@@ -9,4 +9,4 @@ function Loader({ fullscreen = true }) {
     );
 }
 
-export default Loader;
+export default Spinner;

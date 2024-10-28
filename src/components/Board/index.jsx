@@ -1,10 +1,10 @@
 import React from 'react';
-import './card.css';
-import UserIcon from '../UserIcon';
+import './index.css';
+import UserIcon from '../Profile';
 import MoreIcon from '../../assets/icons_FEtask/three_dot_menu.svg';
-import { getStatusIcon } from '../../utils/helper';
+import { getStatusIcon } from '../../help/helper';
 
-function Card({ ticket, userData, hideStatusIcon, hideProfileIcon }) {
+function Board({ ticket, userData, hideStatusIcon, hideProfileIcon }) {
   return (
     <div className='card'>
       <div className='top-container'>
@@ -30,4 +30,4 @@ function Card({ ticket, userData, hideStatusIcon, hideProfileIcon }) {
   );
 }
 
-export default Card;
+export default Board;

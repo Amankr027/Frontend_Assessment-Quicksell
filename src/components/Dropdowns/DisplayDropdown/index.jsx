@@ -1,5 +1,5 @@
 import React, { useCallback, useEffect, useRef, useState } from 'react';
-import './displayDropdown.css';
+import './index.css';
 
 import Display from '../../../assets/icons_FEtask/Display.svg';
 import Drop from '../../../assets/icons_FEtask/down.svg';

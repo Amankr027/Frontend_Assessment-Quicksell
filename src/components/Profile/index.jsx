@@ -1,5 +1,5 @@
 import React, { useMemo } from 'react';
-import './usericon.css';
+import './index.css';
 
 function UserIcon({ name, available }) {
     const text = useMemo(() => {

@@ -1,9 +1,9 @@
 import React, { useCallback, useEffect, useState } from 'react';
-import Header from './components/Header';
-import Grid from './components/Grid';
+import Header from './components/Nav';
+import Grid from './components/Layout';
 import { GET_TICKETS_URL } from './constants';
-import { loadGrid, mapUsersByUserId } from './utils';
-import Loader from './components/Loader';
+import { loadGrid, mapUsersByUserId } from './help';
+import Loader from './components/Spinner';
 import './App.css';
 
 function App() {

@@ -1,8 +1,8 @@
 import React, { useMemo } from 'react';
-import './grid.css';
-import Column from '../Column/Column';
+import './index.css';
+import Column from '../List/index';
 
-function Grid({ gridData, grouping, userIdToData }) {
+function Layout({ gridData, grouping, userIdToData }) {
     const keys = useMemo(() => Object.keys(gridData), [gridData]);
 
     return (
@@ -20,4 +20,4 @@ function Grid({ gridData, grouping, userIdToData }) {
     );
 }
 
-export default Grid;
+export default Layout;

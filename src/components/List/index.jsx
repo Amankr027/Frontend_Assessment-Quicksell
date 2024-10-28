@@ -1,12 +1,12 @@
 import React, { useMemo } from 'react';
-import Card from '../Card';
+import Card from '../Board';
 import "./column.css";
 import { GrAdd } from 'react-icons/gr';
 import MoreIcon from '../../assets/icons_FEtask/three_dot_menu.svg';
-import { getPriorityIcon, getStatusIcon } from '../../utils/helper';
-import UserIcon from '../UserIcon';
+import { getPriorityIcon, getStatusIcon } from '../../help/helper';
+import UserIcon from '../Profile';
 
-function Column({ tickets, grouping, groupBy, userIdToData }) {
+function List({ tickets, grouping, groupBy, userIdToData }) {
 
     const title = useMemo(() => {
         if (grouping === "status") return groupBy;
@@ -50,4 +50,4 @@ function Column({ tickets, grouping, groupBy, userIdToData }) {
     );
 }
 
-export default Column;
+export default List;
