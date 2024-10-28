@@ -1,4 +1,4 @@
-export const groupTicketsByStatus = (tickets) => {
+export const groupByTicketStatus = (tickets) => {
     const groups = tickets.reduce((result, ticket) => {
         if (!result[ticket.status]) {
             result[ticket.status] = [];
@@ -10,7 +10,7 @@ export const groupTicketsByStatus = (tickets) => {
     return groups;
 };
 
-export const groupTicketsByPriority = (tickets) => {
+export const groupByTicketPriority = (tickets) => {
     const groups = tickets.reduce((result, ticket) => {
         const priority = getPriorityLabel(ticket.priority);
 /**
@@ -42,7 +42,7 @@ export const groupTicketsByUserId = (tickets) => {
     return groups;
 };
 
-export const mapUsersByUserId = (users) => {
+export const indexUsersById = (users) => {
     let group = users.reduce((accumulator, user) => {
         accumulator[user.id] = user;
         return accumulator;
@@ -65,7 +65,7 @@ const getPriorityLabel = (priority) => {
 const orderByPriority = (tickets) => tickets.sort((a, b) => (a.priority > b.priority ? -1 : 1));
 const orderByTitle = (tickets) => tickets.sort((a, b) => (a.title < b.title ? -1 : 1));
 
-export const loadGrid = (tickets, grouping, ordering) => {
+export const initializeGrid = (tickets, grouping, ordering) => {
     let orderedTickets;
     if (ordering === "priority") {
         orderedTickets = orderByPriority(tickets);
@@ -74,8 +74,8 @@ export const loadGrid = (tickets, grouping, ordering) => {
     }
 
     switch (grouping) {
-        case "status": return groupTicketsByStatus(orderedTickets);
-        case "priority": return groupTicketsByPriority(orderedTickets);
+        case "status": return groupByTicketStatus(orderedTickets);
+        case "priority": return groupByTicketPriority(orderedTickets);
         case "user": return groupTicketsByUserId(orderedTickets);
         default: return groupTicketsByUserId(orderedTickets);
     }
