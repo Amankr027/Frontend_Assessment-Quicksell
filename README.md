@@ -1,52 +1,143 @@
-# Getting Started with Create React App
+# Kanban Board Application - Frontend Assessment for QuickSell
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This is a React-based Kanban board application developed as part of a frontend assessment for QuickSell. The application fetches task data from an API and allows users to group and sort tasks dynamically, providing a user-friendly interface for task management.
 
-## Available Scripts
+## Table of Contents
 
-In the project directory, you can run:
+- [Features](#features)
+- [Demo](#demo)
+- [Installation](#installation)
+- [Usage](#usage)
+- [Project Structure](#project-structure)
+- [Components](#components)
+- [API](#api)
+- [Technical Details](#technical-details)
+- [Contributing](#contributing)
+- [License](#license)
 
-### `yarn start`
+## Features
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+- **Dynamic Grouping**: Allows users to group tasks by status, user, or priority.
+- **Sorting Options**: Sort tasks by priority (descending) or title (ascending).
+- **Persistent Settings**: Saves user preferences for grouping and sorting, even after a page reload.
+- **Responsive Design**: The application is fully responsive and adheres to the provided design specifications.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+## Demo
 
-### `yarn test`
+- Run the application locally or check out the [GitHub Repository](https://github.com/Amankr027/Frontend_Assessment-Quicksell) for source code and additional details.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Installation
 
-### `yarn build`
+1. Clone the repository:
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+    ```bash
+    git clone https://github.com/Amankr027/Frontend_Assessment-Quicksell.git
+    cd Frontend_Assessment-Quicksell
+    ```
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+2. Install dependencies:
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+    ```bash
+    npm install
+    ```
 
-### `yarn eject`
+3. Start the application:
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+    ```bash
+    npm start
+    ```
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+4. Open [http://localhost:3000](http://localhost:3000) to view the application in the browser.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+## Usage
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+1. **Grouping**: Use the dropdown menu to group tasks by status, user, or priority.
+2. **Sorting**: Choose between sorting tasks by priority or title.
+3. **Persistent Settings**: The app remembers your last grouping and sorting preferences across sessions.
 
-## Learn More
+## Project Structure
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+```plaintext
+├── public
+│   └── index.html               # Main HTML file
+├── src
+│   ├── assets                   # Static assets (e.g., images, icons)
+│   ├── components               # Reusable components
+│   │   ├── Board                # Board component to display grouped tasks
+│   │   │   ├── index.css
+│   │   │   └── index.jsx
+│   │   ├── Dropdowns            # Dropdown components for grouping and sorting
+│   │   ├── Layout               # Main layout component
+│   │   ├── List                 # Components for task lists within the board
+│   │   │   ├── column.css
+│   │   │   └── index.jsx
+│   │   ├── Nav                  # Navigation bar component
+│   │   ├── Profile              # User profile component
+│   │   └── Spinner              # Loading spinner component
+│   ├── help                     # Helper functions for API and data processing
+│   ├── App.css                  # Global styles
+│   ├── App.js                   # Main application component
+│   ├── App.test.tsx             # Unit tests for the App component
+│   ├── constants.js             # Contains constants (e.g., API URL)
+│   ├── index.css                # Global CSS
+│   └── index.js                 # Entry point for the application
+└── .gitignore                   # Git ignore file
 
-To learn React, check out the [React documentation](https://reactjs.org/).
 
-## Preview
+```
 
-![Desktop Screenshot 1](./preview/Desktop-1.png)
-![Desktop Screenshot 2](./preview/Desktop-2.png)
-![Mobile Screenshot 1](./preview/Mobile-1.png)
+## Components
+
+- **App**: The main component that manages state and renders other components, including `Nav`, `Spinner`, and `Board`.
+- **Board**: Displays tasks grouped by the selected criteria (status, user, or priority).
+- **Dropdowns**: Components for grouping and sorting options.
+- **List**: Renders task lists within each group column on the board.
+- **Nav**: Navigation bar for grouping and sorting options.
+- **Profile**: Displays user profile details.
+- **Spinner**: Loading spinner shown during data fetches.
+
+## API
+
+- **Endpoint**: The application fetches data from an API to populate the Kanban board.
+
+    ```plaintext
+    https://api.quicksell.co/v1/internal/frontend-assignment
+    ```
+
+    The API response includes tasks with properties like status, priority, title, and assigned user.
+
+## Technical Details
+
+- **React**: Built with React functional components and hooks, including `useState`, `useEffect`, `useCallback`, and `useMemo`.
+- **CSS Styling**: Designed with pure CSS (no external libraries), maintaining a responsive and clean UI.
+- **State Management**: Manages user preferences (grouping and sorting) with local storage, ensuring persistence across sessions.
+- **Helper Functions**: Located in the `help` folder to handle tasks like grouping, sorting, and API data processing.
+
+## Contributing
+
+Contributions are welcome! Follow these steps to contribute:
+
+1. Fork the repository.
+2. Create a new branch:
+
+    ```bash
+    git checkout -b feature/your-feature-name
+    ```
+
+3. Make your changes and commit:
+
+    ```bash
+    git commit -m 'Add your feature'
+    ```
+
+4. Push to your branch:
+
+    ```bash
+    git push origin feature/your-feature-name
+    ```
+
+5. Open a pull request for review.
+
+## License
+
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
